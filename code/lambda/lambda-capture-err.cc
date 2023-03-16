@@ -8,30 +8,30 @@ int main()
     ++y; ++x;
   };
   qqq();
-  auto qqq = [=] { 
+  auto qqq1 = [=] { 
     std::cout << "x: " << x << std::endl; 
     std::cout << "y: " << y << std::endl;
     ++y; ++x;
   };
-  qqq();
-  auto qqq = [&] { 
+  qqq1();
+  auto qqq2 = [&] { 
     std::cout << "x: " << x << std::endl; 
     std::cout << "y: " << y << std::endl;
     ++y; ++x;
   };
-  qqq();
-  auto qqq = [&, x] { 
+  qqq2();
+  auto qqq3 = [&, x] { 
     std::cout << "x: " << x << std::endl; 
     std::cout << "y: " << y << std::endl;
     ++y; ++x;
   };
-  qqq();
-  auto qqq = [=, &x] { 
+  qqq3();
+  auto qqq4 = [=, &x] { 
     std::cout << "x: " << x << std::endl; 
     std::cout << "y: " << y << std::endl;
     ++y; ++x;
   };
-  qqq();
+  qqq4();
   auto qqq5 = [=, &x] mutable {  // qqq5 = [=, &x] () mutable
     std::cout << "x: " << x << std::endl; 
     std::cout << "y: " << y << std::endl;
